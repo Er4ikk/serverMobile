@@ -10,7 +10,7 @@ import jakarta.ws.rs.core.MediaType;
 /**
  * Root resource (exposed at "myresource" path)
  */
-@Path("myresource")
+@Path("/myresource")
 public class MyResource {
     
     DatabaseConfiguration databaseConfiguration;
