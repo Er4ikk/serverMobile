@@ -1,5 +1,7 @@
 package com.unimol.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class User {
     		private int id;
     		private String name;
@@ -8,7 +10,11 @@ public class User {
     		private String password;
     		
     		
-    		public User( int id,String name,String username, String surname, String password) {
+    		public User( @JsonProperty("id")int id,
+    			@JsonProperty("name")String name,
+    			@JsonProperty("username") String username,
+    			@JsonProperty("surname")String surname, 
+    			@JsonProperty("password")String password) {
     		    this.setId(id);
     		    this.setName(name);
     		    this.setPassword(password);
