@@ -13,7 +13,7 @@ import jakarta.ws.rs.core.MediaType;
 @Path("/myresource")
 public class MyResource {
     
-    DatabaseConfiguration databaseConfiguration;
+
 
     /**
      * Method handling HTTP GET requests. The returned object will be sent
@@ -24,7 +24,7 @@ public class MyResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
-	databaseConfiguration=new DatabaseConfiguration();
+	
         return "PIPpo l ha mesa!";
     }
 }

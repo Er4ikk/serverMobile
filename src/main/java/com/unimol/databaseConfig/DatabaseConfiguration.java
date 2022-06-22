@@ -17,6 +17,8 @@ public class DatabaseConfiguration {
    private String password="";
    
    
+   private Connection connection;
+   
    public DatabaseConfiguration() {
        createConnection();
    }
@@ -33,10 +35,14 @@ public class DatabaseConfiguration {
        return this.password;
    }
    
+   public Connection getConnection() {
+       return this.connection;
+   }
+   
    public void createConnection() {
        try {
 	Class.forName("com.mysql.jdbc.Driver");
-	Connection connection = DriverManager.getConnection(this.databaseUrl,this.user,this.password);
+	 this.connection = DriverManager.getConnection(this.databaseUrl,this.user,this.password);
 	System.out.println("Connection succesfull with database");
 	System.out.println(connection.toString());
 	
@@ -47,6 +53,18 @@ public class DatabaseConfiguration {
     } catch (SQLException e) {
 	// TODO Auto-generated catch block
 	System.out.println("Connection with database failed  "+ e);
+    }
+   }
+   
+   public void stopConnection() {
+       try {
+	this.connection.close();
+	System.out.println("connection to db closed dbconfig");
+    } catch (SQLException e) {
+	// TODO Auto-generated catch block
+	System.out.println("cannot close dbconfig");
+	e.printStackTrace();
+	
     }
    }
 

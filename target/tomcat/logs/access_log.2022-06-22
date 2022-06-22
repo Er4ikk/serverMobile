@@ -52,3 +52,17 @@
 127.0.0.1 - - [22/Jun/2022:10:22:33 +0200] "GET /serverMobile/rest/users HTTP/1.1" 200 36 http-bio-8080-exec-3 2
 127.0.0.1 - - [22/Jun/2022:10:24:20 +0200] "GET /serverMobile/rest/users HTTP/1.1" 200 39 http-bio-8080-exec-1 213
 0:0:0:0:0:0:0:1 - - [22/Jun/2022:10:26:38 +0200] "GET /serverMobile/rest/users HTTP/1.1" 200 39 http-bio-8080-exec-4 2
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:09:40 +0200] "GET /serverMobile/rest/users HTTP/1.1" 404 967 http-bio-8080-exec-2 71
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:11:54 +0200] "GET /serverMobile/rest/users HTTP/1.1" 404 967 http-bio-8080-exec-2 84
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:13:36 +0200] "GET /serverMobile/rest/myresource HTTP/1.1" 200 16 http-bio-8080-exec-5 12
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:14:40 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 70 http-bio-8080-exec-2 428
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:16:56 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 70 http-bio-8080-exec-2 447
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:21:36 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 70 http-bio-8080-exec-2 604
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:22:31 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 70 http-bio-8080-exec-2 497
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:23:13 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 70 http-bio-8080-exec-2 487
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:23:19 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 70 http-bio-8080-exec-3 11
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:26:18 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 70 http-bio-8080-exec-2 510
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:30:45 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 70 http-bio-8080-exec-2 483
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:32:37 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 70 http-bio-8080-exec-2 485
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:39:54 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 100 http-bio-8080-exec-2 500
+0:0:0:0:0:0:0:1 - - [22/Jun/2022:11:40:55 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 292 http-bio-8080-exec-5 10

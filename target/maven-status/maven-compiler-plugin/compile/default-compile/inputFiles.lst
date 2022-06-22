@@ -1,4 +1,5 @@
 /home/giulio/eclipse-workspace/serverMobile/src/main/java/com/unimol/models/User.java
+/home/giulio/eclipse-workspace/serverMobile/src/main/java/com/unimol/queries/UserQueries.java
 /home/giulio/eclipse-workspace/serverMobile/src/main/java/com/unimol/controllers/UserController.java
 /home/giulio/eclipse-workspace/serverMobile/src/main/java/com/unimol/databaseConfig/DatabaseConfiguration.java
 /home/giulio/eclipse-workspace/serverMobile/src/main/java/com/unimol/serverMobile/MyResource.java
