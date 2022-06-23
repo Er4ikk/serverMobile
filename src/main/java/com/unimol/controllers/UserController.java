@@ -31,7 +31,7 @@ public class UserController {
     public ArrayList<User> getUsers() {
 
 	parseUser(this.userQueries.getAllUsers());
-	utf8mb4_general_ci
+	
 	
 	return this.UserList;
 	
