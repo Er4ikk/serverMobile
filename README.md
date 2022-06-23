@@ -6,6 +6,13 @@ or
 Run Configuration>Maven>New Configuration
 Goals: tomcat7:run
 
+Using XAMPP/LAMPP
+
+in com.unimol.databaseConfig>DataBaseConfiguration.java
+the mysql port is 3308!!!!!
+
+if you have mysql running on a different port please change the "port" attribute
+
 WHEN IMPORTING DATABASE BE SURE TO SELECT coding to utf8mb4_general_ci
 
 to check if everything works:
