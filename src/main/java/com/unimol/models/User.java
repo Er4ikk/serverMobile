@@ -5,21 +5,21 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class User {
     		private int id;
     		private String name;
-    		private String username;
+    		private String mail;
     		private String surname;
     		private String password;
     		
     		
     		public User( @JsonProperty("id")int id,
     			@JsonProperty("name")String name,
-    			@JsonProperty("username") String username,
-    			@JsonProperty("surname")String surname, 
+    			@JsonProperty("surname") String surname,
+    			@JsonProperty("mail")String mail, 
     			@JsonProperty("password")String password) {
     		    this.setId(id);
     		    this.setName(name);
     		    this.setPassword(password);
     		    this.setSurname(surname);
-    		    this.setUsername(username);
+    		    this.setMail(mail);
     		    
     		}
     		
@@ -32,8 +32,8 @@ public class User {
     		    return this.name;
     		}
     		
-    		public  String getUsername() {
-    		    return this.username;
+    		public  String getMail() {
+    		    return this.mail;
     		}
     		
     		public  String getSurname() {
@@ -52,8 +52,8 @@ public class User {
     		    this.name=name;
     		}
     		
-    		public void setUsername(String username) {
-    		    this.username=username;
+    		public void setMail(String mail) {
+    		    this.mail=mail;
     		}
     		
     		public void setSurname(String surname) {

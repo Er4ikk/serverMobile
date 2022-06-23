@@ -1,6 +1,5 @@
 package com.unimol.serverMobile;
 
-import com.unimol.databaseConfig.DatabaseConfiguration;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

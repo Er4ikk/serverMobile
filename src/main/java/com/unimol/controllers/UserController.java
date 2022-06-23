@@ -31,7 +31,7 @@ public class UserController {
     public ArrayList<User> getUsers() {
 
 	parseUser(this.userQueries.getAllUsers());
-	
+	utf8mb4_general_ci
 	
 	return this.UserList;
 	
@@ -66,6 +66,19 @@ public class UserController {
 	
     }
     
+    @Path("/{mail}/{password}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList<User> getUsersByMailAndPassword(@PathParam("mail")String mail,@PathParam("password") String password) {
+	
+	parseUser(this.userQueries.getUserByMailAndPassword(mail, password));
+	
+	
+	return this.UserList;
+	
+    }
+    
+    
     @Path("/delete/{id}")
     @DELETE
     @Produces(MediaType.APPLICATION_JSON)
@@ -83,14 +96,15 @@ public class UserController {
     public void parseUser(ResultSet results) {
 	
 	 try {
+	     this.UserList.clear();
 	    while(results.next()) {
 		int id= Integer.parseInt(results.getString(1));
 		this.UserList.add(new User(
 			id,
 			results.getString(2),
 			results.getString(3),
-			results.getString(4),
-			results.getString(5)
+			results.getString(5),
+			results.getString(4)
 			
 			));
 		

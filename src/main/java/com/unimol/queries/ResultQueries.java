@@ -5,24 +5,29 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.sql.rowset.serial.SerialBlob;
+import javax.sql.rowset.serial.SerialException;
 
+import com.mysql.cj.jdbc.Blob;
+import com.mysql.cj.protocol.x.ReusableOutputStream;
 import com.unimol.databaseConfig.DatabaseConfiguration;
-import com.unimol.models.User;
+import com.unimol.models.Result;
 
-public class UserQueries {
+
+public class ResultQueries {
+
     
     DatabaseConfiguration databaseConfiguration;
     Statement statement;
     Connection connection;
     
-    public UserQueries() {
+    public  ResultQueries() {
 	databaseConfiguration=new DatabaseConfiguration();
 	connection=databaseConfiguration.getConnection();
-	
     }
     
-    public ResultSet getAllUsers() {
-	String query="SELECT * FROM `USER`";
+    public ResultSet getAllResults() {
+	String query="SELECT * FROM `RESULT`";
 	
 	try {
 	    this.statement=(Statement) this.connection.createStatement();
@@ -37,8 +42,8 @@ public class UserQueries {
     }
     
     
-    public ResultSet getUserById(int id) {
-	String query="SELECT * FROM `USER` WHERE id="+id;
+    public ResultSet getResultByUserId(int id) {
+	String query="SELECT * FROM `RESULT` WHERE id_user="+id;
 	
 	try {
 	    this.statement=(Statement) this.connection.createStatement();
@@ -52,45 +57,46 @@ public class UserQueries {
 	return null;
     }
     
-    public ResultSet getUserByMailAndPassword(String mail,String password) {
-	String query="SELECT * FROM `USER` WHERE USER.mail='"+mail  +"'  AND  USER.password='"+password+"' ";
-	System.out.println(query);
-	
-	try {
-	    this.statement=(Statement) this.connection.createStatement();
-	    ResultSet results = this.statement.executeQuery(query);
-	   return results;
-	} catch (SQLException e) {
-	    // TODO Auto-generated catch block
-	    	System.out.println("cannot create statement "+e);
-	}
-	
-	return null;
-    }
     
-    public void insertUser(User user) {
+    public void insertResult(Result result,String photo) {
 	
-String query="INSERT INTO `USER` (`id`, `name`, `surname`, `password`, `mail`) VALUES "
-				+ "(NULL,  ' "+user.getName()+" ' ,' "+user.getSurname().toString()+
-				" ' , ' "+user.getPassword()+" ' , ' "+user.getMail()+" ' ); ";
 	
 	try {
-	    this.statement=(Statement) this.connection.createStatement();
+	    
+	    
+	  if(photo==null) {
+	      photo=null;
+	  }
+
+		
+	    	String query="INSERT INTO `RESULT` (`id`, `id_user`, `photo`, `labels`, `date`) VALUES "
+				+ "(NULL,  ' "+result.getIdUser()+" ' , "+photo+
+				" , ' "+result.getLabel()+" ' , ' "+result.getDate()+" ' ); ";
+	    		System.out.println(query);
+
+		this.statement=(Statement) this.connection.createStatement();
 	   this.statement.executeUpdate(query);
 	   System.out.println("User insert correctly");
-	  
-	} catch (SQLException e) {
+	} catch (SerialException e1) {
 	    // TODO Auto-generated catch block
-	    	System.out.println("cannot create statement "+e);
+		System.out.println("cannot serialize "+e1);
+	    e1.printStackTrace();
+	} catch (SQLException e1) {
+	    // TODO Auto-generated catch block
+	   	System.out.println("cannot create statement "+e1);
+	    e1.printStackTrace();
 	}
+	
+	
+	
 	
 	
 	
     }
     
-    public void deleteUserById(int id) {
+    public void deleteResultById(int id) {
 	
-	String query="DELETE  FROM `USER` WHERE id="+id;
+	String query="DELETE  FROM `RESULT` WHERE id="+id;
 	
 	try {
 	    this.statement=(Statement) this.connection.createStatement();
@@ -116,5 +122,6 @@ String query="INSERT INTO `USER` (`id`, `name`, `surname`, `password`, `mail`) V
 	}
 	
     }
-
+    
+    
 }
