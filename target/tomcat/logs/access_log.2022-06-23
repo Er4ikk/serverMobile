@@ -86,3 +86,7 @@
 0:0:0:0:0:0:0:1 - - [23/Jun/2022:16:09:14 +0200] "GET /serverMobile/rest/results/13 HTTP/1.1" 200 804963 http-bio-8080-exec-8 30
 0:0:0:0:0:0:0:1 - - [23/Jun/2022:16:09:40 +0200] "GET /serverMobile/rest/results/all HTTP/1.1" 200 1207345 http-bio-8080-exec-9 24
 0:0:0:0:0:0:0:1 - - [23/Jun/2022:16:10:22 +0200] "GET /serverMobile/rest/users/enzo/enzo HTTP/1.1" 200 81 http-bio-8080-exec-10 11
+0:0:0:0:0:0:0:1 - - [23/Jun/2022:17:40:25 +0200] "GET /serverMobile/rest/myresource HTTP/1.1" 200 16 http-bio-8080-exec-2 89
+127.0.0.1 - - [23/Jun/2022:17:49:06 +0200] "GET /serverMobile/rest/myresource HTTP/1.1" 200 16 http-bio-8080-exec-4 12
+127.0.0.1 - - [23/Jun/2022:17:49:07 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-6 0
+127.0.0.1 - - [23/Jun/2022:17:49:45 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 429 http-bio-8080-exec-7 884

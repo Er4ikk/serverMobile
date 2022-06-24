@@ -66,6 +66,18 @@ public class UserController {
 	
     }
     
+    @Path("/mail/{mail}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList<User> getUsersByMal(@PathParam("mail")String mail) {
+	
+	parseUser(this.userQueries.getUserByMail(mail));
+	
+	
+	return this.UserList;
+	
+    }
+    
     @Path("/{mail}/{password}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)

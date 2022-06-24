@@ -52,6 +52,24 @@ public class UserQueries {
 	return null;
     }
     
+    public ResultSet getUserByMail(String mail) {
+   	String query="SELECT * FROM `USER` WHERE mail= '"+mail+"' ";
+   
+   	
+   	try {
+   	    this.statement=(Statement) this.connection.createStatement();
+   	    ResultSet results = this.statement.executeQuery(query);
+   	   
+   	   return results;
+   	} catch (SQLException e) {
+   	    // TODO Auto-generated catch block
+   	    	System.out.println("cannot create statement "+e);
+   	}
+   	
+   	return null;
+       }
+       
+    
     public ResultSet getUserByMailAndPassword(String mail,String password) {
 	String query="SELECT * FROM `USER` WHERE USER.mail='"+mail  +"'  AND  USER.password='"+password+"' ";
 	System.out.println(query);
