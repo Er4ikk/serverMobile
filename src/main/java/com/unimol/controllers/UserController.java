@@ -31,7 +31,7 @@ public class UserController {
     public ArrayList<User> getUsers() {
 
 	parseUser(this.userQueries.getAllUsers());
-	utf8mb4_general_ci
+	
 	
 	return this.UserList;
 	
@@ -60,6 +60,18 @@ public class UserController {
     public ArrayList<User> getUsersById(@PathParam("id")int id) {
 	
 	parseUser(this.userQueries.getUserById(id));
+	
+	
+	return this.UserList;
+	
+    }
+    
+    @Path("/mail/{mail}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList<User> getUsersByMal(@PathParam("mail")String mail) {
+	
+	parseUser(this.userQueries.getUserByMail(mail));
 	
 	
 	return this.UserList;

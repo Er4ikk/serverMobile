@@ -8,6 +8,8 @@ Goals: tomcat7:run
 
 Using XAMPP/LAMPP
 
+the database should be called : plant_checker
+
 in com.unimol.databaseConfig>DataBaseConfiguration.java
 the mysql port is 3308!!!!!
 
