@@ -97,3 +97,11 @@
 127.0.0.1 - - [24/Jun/2022:16:43:18 +0200] "POST /serverMobile/rest/users/create HTTP/1.1" 415 1092 http-bio-8080-exec-10 2
 127.0.0.1 - - [24/Jun/2022:16:43:32 +0200] "POST /serverMobile/rest/users/create HTTP/1.1" 415 1092 http-bio-8080-exec-2 4
 127.0.0.1 - - [24/Jun/2022:17:03:29 +0200] "POST /serverMobile/rest/users/create HTTP/1.1" 201 15 http-bio-8080-exec-6 92
+0:0:0:0:0:0:0:1 - - [24/Jun/2022:17:07:43 +0200] "GET /serverMobile/rest/users/mail/enzo HTTP/1.1" 200 81 http-bio-8080-exec-5 27
+127.0.0.1 - - [24/Jun/2022:17:12:02 +0200] "GET /serverMobile/rest/users/mail/enzo HTTP/1.1" 200 81 http-bio-8080-exec-7 8
+0:0:0:0:0:0:0:1 - - [24/Jun/2022:17:16:15 +0200] "DELETE /serverMobile/rest/users/delete/17 HTTP/1.1" 200 2 http-bio-8080-exec-10 24
+0:0:0:0:0:0:0:1 - - [24/Jun/2022:17:16:20 +0200] "DELETE /serverMobile/rest/users/delete/17 HTTP/1.1" 200 2 http-bio-8080-exec-10 5
+127.0.0.1 - - [24/Jun/2022:17:24:05 +0200] "DELETE /serverMobile/rest/users/delete/11 HTTP/1.1" 200 2 http-bio-8080-exec-4 22
+127.0.0.1 - - [24/Jun/2022:17:29:05 +0200] "GET /serverMobile/rest/users/16 HTTP/1.1" 200 88 http-bio-8080-exec-9 16
+127.0.0.1 - - [24/Jun/2022:17:29:58 +0200] "POST /serverMobile/rest/users/create HTTP/1.1" 201 15 http-bio-8080-exec-7 14
+127.0.0.1 - - [24/Jun/2022:17:30:00 +0200] "GET /serverMobile/rest/users/16 HTTP/1.1" 200 88 http-bio-8080-exec-2 12

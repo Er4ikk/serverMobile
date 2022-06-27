@@ -89,8 +89,11 @@ public class UserQueries {
     public void insertUser(User user) {
 	
 String query="INSERT INTO `USER` (`id`, `name`, `surname`, `password`, `mail`) VALUES "
-				+ "(NULL,  ' "+user.getName()+" ' ,' "+user.getSurname().toString()+
-				" ' , ' "+user.getPassword()+" ' , ' "+user.getMail()+" ' ); ";
+				+ "(NULL,  '"+user.getName()+"' ,'"+user.getSurname().toString()+
+				"' , '"+user.getPassword()+"' , '"+user.getMail()+"' ); ";
+	
+	
+
 	
 	try {
 	    this.statement=(Statement) this.connection.createStatement();
