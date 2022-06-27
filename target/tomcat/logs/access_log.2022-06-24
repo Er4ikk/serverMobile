@@ -1,0 +1,1 @@
+127.0.0.1 - - [24/Jun/2022:11:00:55 +0200] "GET /serverMobile/rest/users/all HTTP/1.1" 200 429 http-bio-8080-exec-1 705
