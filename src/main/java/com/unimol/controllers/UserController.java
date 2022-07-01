@@ -9,13 +9,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.unimol.models.User;
 import com.unimol.queries.UserQueries;
 
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.DELETE;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -45,15 +39,29 @@ public class UserController {
 
         Object mapper =new ObjectMapper();
 	ObjectNode json = ((ObjectMapper) mapper).createObjectNode();
-	
-	
+
+
 	this.userQueries.insertUser(user);
+        json.put("status", "ok");
+        this.userQueries.stopConnection();
+        return Response.status(Response.Status.OK).entity(json).build();
+
+    }
+    @Path("/updateUser")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateUser(User user) {
+        Object mapper =new ObjectMapper();
+        ObjectNode json = ((ObjectMapper) mapper).createObjectNode();
+
+        this.userQueries.updateUser(user);
+
         json.put("status", "ok");
         this.userQueries.stopConnection();
         return Response.status(Response.Status.CREATED).entity(json).build();
 
     }
-    
     @Path("/{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)

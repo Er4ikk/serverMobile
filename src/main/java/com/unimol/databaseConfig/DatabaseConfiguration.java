@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DatabaseConfiguration {
    
     private String host="localhost";
-    private String port="3308";
+    private String port="3306";
     private String dbName="plant_checker";
     
    private  String databaseUrl="jdbc:mysql://" + this.host + ":" + this.port + "/"+this.dbName ;
